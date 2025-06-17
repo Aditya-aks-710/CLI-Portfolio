@@ -209,6 +209,18 @@ html, body {
   border-left: 2px solid #555;
 }
 
+.timeline-header h3 {
+  font-size: clamp(1.2rem, 2vw, 1.4rem);
+}
+
+.timeline-content p {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.timeline-content ul {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
 .timeline-item {
   position: relative;
   margin-bottom: 2rem;
