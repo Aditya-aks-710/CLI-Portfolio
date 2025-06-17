@@ -1,0 +1,40 @@
+body {
+  background: black;
+  color: rgb(51, 183, 181);
+  font-family: monospace;
+  text-align: center;
+  padding-top: 50px;
+}
+
+.video-frame {
+  width: 90%;
+  max-width: 480px;
+  margin: 20px auto;
+  border: 2px solid rgb(30, 174, 176);
+  padding: 10px 5px;
+}
+
+#boot-video {
+  width: 90%;
+  height: auto;
+  border-radius: 4px;
+  object-fit: cover;
+  filter: contrast(1.2) brightness(0.8);
+}
+
+.progress-bar {
+  background: #111;
+  border: 1px solid rgb(30, 174, 176);
+  margin: 20px auto;
+  height: 15px;
+  position: relative;
+  width: 80%;
+  max-width: 800px;
+}
+
+.bar {
+  height: 100%;
+  background: rgb(30, 174, 176);
+  width: 0%;
+  transition: width 0.3s;
+}

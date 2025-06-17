@@ -1,0 +1,275 @@
+
+html, body {
+      margin: 0;
+      padding: 0;
+      overflow: auto;
+      height: 100%;
+      background: black;
+      font-family: monospace;
+      color: rgb(105, 202, 204);
+    }
+
+    .logo{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 2rem 1rem;
+    }
+
+    .logo-description{
+        text-align: center;
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        margin: 10px 0;
+        border: 2px solid rgb(30, 174, 176);
+        position: relative;
+        max-width: 90%;
+    }
+
+    .logo-description p {
+        padding: 0 15px;
+    }
+
+    .ascii-art {
+        font-family: monospace;
+        font-size: clamp(5px, 2vw, 16px);
+        color: rgb(103, 252, 255);
+        text-align: center;
+        white-space: pre;
+        text-shadow:
+            0 0 5px #000000,
+            0 0 10px #00ffcc,
+            0 0 20px #000000,
+            0 0 40px #57726d;
+
+    }
+
+    #cursor {
+      display: inline-block;
+      width: 10px;
+      color: #00ff00;
+      animation: blink 0.7s steps(2, start) infinite;
+    }
+
+    @keyframes blink {
+      0%, 50% {
+        opacity: 1;
+      }
+      50.1%, 100% {
+        opacity: 0;
+      }
+    }
+
+    .terminal {
+      position: relative;
+      z-index: 1;
+      padding: 2rem;
+    }
+
+    #output {
+      white-space: pre-wrap;
+    }
+
+    .input-line {
+      display: flex;
+    }
+
+    .console{
+        font-size: clamp(1rem, 2vw, 1.2rem);
+        line-height: 1.5;
+    }
+
+    #command {
+      background: black;
+      border: none;
+      color: rgb(103, 247, 249);
+      font-family: monospace;
+      font-size:clamp(1rem, 2vw, 1.2rem);
+      outline: none;
+      width: 100%;
+    }
+
+    .command-box {
+        /* position: absolute;
+        top: 5px; */
+        background-color: #111;
+        border: 1px solid #0f0;
+        padding: 1rem;
+        margin-top: 1rem;
+        font-family: monospace;
+        color: #0f0;
+        border-radius: 8px;
+        line-height: 1;
+    }
+
+  /*-------------  STYLING OF ABOUT.JS STARTS HERE ------------- */
+
+
+    
+    .fade-in {
+      animation: fadeInUp 0.3s ease-out;
+    }
+    .about-modal {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      width: 80%;
+      max-width: 600px;
+      background: #111;
+      color: rgb(103, 252, 255);
+      border-radius: 10px;
+      transform: translate(-50%, -50%);
+      z-index: 999;
+      box-shadow: 0 0 20px rgb(103, 252, 255);
+      padding: 20px;
+      animation: fadeInUp 0.3s ease-out;
+      overflow-y: auto;
+      max-height: 80vh;
+    }
+
+    .about-modal h4 {
+      color: #0f0;
+    }
+
+.about-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem;
+      background-color: #1e1e1e;
+      border-bottom: 1px solid rgb(103, 252, 255);
+      font-size: clamp(1rem, 2vw, 1.2rem);
+      font-weight: bold;
+      color: rgb(103, 252, 255);
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
+    }
+
+.close-btn {
+  background: transparent;
+  color: red;
+  font-size: 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.about-content ul.no-bullets {
+  list-style: none;
+  padding-left: 1.2rem;
+}
+
+.about-content {
+  font-size: clamp(1rem, 2vw, 1.2rem);
+}
+
+.highlight {
+  color: #0f0;
+  font-weight: bold;
+}
+
+    /*-------------  STYLING OF EDUCATION.JS STARTS HERE ------------- */
+
+    .timeline-style {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: #111;
+      color: rgb(103, 252, 255);
+      padding: 1rem 1rem;
+      border-radius: 10px;
+      max-width: 600px;
+      width: 80%;
+      max-height: 90vh;
+      overflow-y: auto;
+      z-index: 9999;
+      animation: fadeInUp 0.4s ease-in-out;
+      box-shadow: 0 0 20px rgb(103, 252, 255);
+    }
+
+    .about-header h2 {
+      margin: 0;
+    }
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -40%);
+  }
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+  }
+}
+
+.timeline {
+  position: relative;
+  margin: 2rem 1rem;
+  padding-left: 30px;
+  border-left: 2px solid #555;
+}
+
+.timeline-item {
+  position: relative;
+  margin-bottom: 2rem;
+  animation: slideIn 0.5s ease forwards;
+  opacity: 0;
+}
+
+.timeline-item:nth-child(1) { animation-delay: 0.1s; }
+.timeline-item:nth-child(2) { animation-delay: 0.3s; }
+.timeline-item:nth-child(3) { animation-delay: 0.5s; }
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  from {
+    transform: translateX(-20px);
+    opacity: 0;
+  }
+}
+
+.timeline-dot {
+  position: absolute;
+  top: 2px;
+  left: -25px;
+  width: 14px;
+  height: 14px;
+  background-color: #0f0;
+  border-radius: 50%;
+  border: 2px solid #333;
+}
+
+.timeline-content h3 {
+  margin: 0 0 5px;
+}
+
+.timeline-content p {
+  margin: 2px 0;
+}
+
+.timeline-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.timeline-header .year {
+  font-size: 0.95rem;
+  color: #aaa;
+  white-space: nowrap;
+}
+
+.scrollable-modal {
+  max-height: 80vh;
+  overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+  overflow: hidden;
+  width: 0px;
+}
